@@ -29,3 +29,9 @@ For Vercel/Cloudflare CI, set the project root to `website`, and ensure the chec
 
 ## Design lock
 Do not regenerate the logo or substitute another image. Adjust layout, sizing and spacing around the approved master instead.
+
+## Visual reference alignment — iteration 2
+
+The hero now layers independent `public/decor/osaka-skyline.svg` and `public/decor/sakura-petals.svg` underneath the unchanged approved master `/brand/logo.png`. These are lightweight vector decorations, **not** reproductions of Osaka Castle or the exact original illustration. The official master remains the only source of the event logo.
+
+Next QA: run `npm run build`, check desktop 1440px and mobile 390px, verify that no logo text is clipped, and compare against the user-provided three-panel reference screenshot. The current SVG decorations are first-pass approximations; browser QA and visual approval are outstanding.
