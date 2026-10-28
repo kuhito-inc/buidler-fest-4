@@ -19,3 +19,12 @@ Exact logo geometry, typography, color hex values, layout spacing, motion timing
 3. Website, social, and motion must import shared approved assets and design tokens.
 4. Track design changes through commits and review; increment version when masters change.
 5. Dates, speakers, sponsors, and venue remain placeholders until confirmed.
+
+## Cardano icon masters — approved source files
+
+User supplied three official-named SVG variants, stored under `brand/logos/`:
+- `Cardano-RGB_Logo-Icon-Black.svg` — solid black
+- `Cardano-RGB_Logo-Icon-White.svg` — solid white
+- `Cardano-RGB_Logo-Icon-Blue.svg` — solid `#0033AD`
+
+All three supplied files have the same 30 path geometries and `viewBox="0 0 375 346.51"`. Preserve paths, proportions and dot placement exactly. Do not regenerate, trace, simplify, distort or introduce gradients. Select the appropriate supplied monochrome variant for background contrast. These source icons are approved; the complete Buidler Fest event logo is still a draft.
