@@ -1,0 +1,10 @@
+import { copyFileSync, existsSync, mkdirSync } from "node:fs";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+const root = resolve(dirname(fileURLToPath(import.meta.url)), "../../..");
+const source = resolve(root, "brand/logos/builder-fest-2027-logo.png");
+const target = resolve(root, "website/public/brand/logo.png");
+if (!existsSync(source)) throw new Error("Approved master missing: " + source);
+mkdirSync(dirname(target), {recursive:true});
+copyFileSync(source,target);
+console.log("Copied approved master unchanged");
