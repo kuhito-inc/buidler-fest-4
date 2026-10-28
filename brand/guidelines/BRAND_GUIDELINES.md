@@ -28,3 +28,7 @@ User supplied three official-named SVG variants, stored under `brand/logos/`:
 - `Cardano-RGB_Logo-Icon-Blue.svg` — solid `#0033AD`
 
 All three supplied files have the same 30 path geometries and `viewBox="0 0 375 346.51"`. Preserve paths, proportions and dot placement exactly. Do not regenerate, trace, simplify, distort or introduce gradients. Select the appropriate supplied monochrome variant for background contrast. These source icons are approved; the complete Buidler Fest event logo is still a draft.
+
+## Cardano logo production asset (2026-10-28)
+
+The user explicitly selects `brand/logos/Cardano-RGB_Logo-Icon-Blue.png` as the **transparent production asset** for subsequent event logo compositing. GitHub blob SHA at selection: `d81e2be8d7075f3862996777681991f35f887074`. Use the exact PNG bytes as an overlay layer; do not ask an image generator to draw this emblem, remove generated logos via inpainting, trace, or reinterpret it. Keep source SVG variants as references, but prefer this designated PNG for PNG compositions. Any change to this master requires explicit approval.
