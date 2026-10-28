@@ -1,3 +1,5 @@
 node_modules/
 .next/
 public/brand/logo.png
+public/decor/reference-composite.png
+qa-output/

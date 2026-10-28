@@ -13,3 +13,8 @@ if (hash !== expectedGitBlobSha) throw new Error("Approved logo master changed! 
 mkdirSync(dirname(target), { recursive: true });
 writeFileSync(target, bytes);
 console.log("Approved logo copied byte-for-byte; Git blob SHA verified:", hash);
+// Display only decorative windows of the supplied design in CSS/SVG. The source
+// remains intact; no reference logo, dates, or speaker portraits are used.
+const reference = resolve(root, "references/website-design/大阪の未来を描くイベントサイトデザイン.png");
+const referenceTarget = resolve(root, "website/public/decor/reference-composite.png");
+writeFileSync(referenceTarget, readFileSync(reference));

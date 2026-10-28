@@ -1,45 +1,34 @@
-# Buidler Fest 2027 website
+﻿# Buidler Fest 2027 website
 
-Next.js App Router landing page. Uses the **existing approved master PNG** at `../brand/logos/builder-fest-2027-logo.png` without redrawing or regenerating it. The predev/prebuild script copies those exact bytes to `public/brand/logo.png` (gitignored).
+Next.js landing page based on `../references/website-design/大阪の未来を描くイベントサイトデザイン.png`.
 
-## Local development
+## Development
 
-```bash
-cd website
-npm install
+```sh
+npm ci
 npm run dev
 ```
 
-## Production build
+On Windows PowerShell with script execution disabled, use `npm.cmd`.
 
-```bash
-cd website
-npm install
+## Verification
+
+```sh
 npm run build
-npm start
+node scripts/visual-qa.mjs
 ```
 
-For Vercel/Cloudflare CI, set the project root to `website`, and ensure the checkout contains the parent `brand/` folder. Do not deploy the `website` directory in isolation. Cloudflare Pages Next.js support may require a compatible adapter.
+The Playwright script expects a server at `http://127.0.0.1:3000` and installed Chrome. Set `QA_BROWSER=msedge` for Edge. It captures full-page and viewport images at 1440×900 and 390×844 in ignored `qa-output/after/`, checks images, horizontal overflow, anchor targets, JavaScript errors, and mobile navigation. Set `QA_STAGE` to retain another comparison pass.
 
-## Content status
-- Dates, hotel, ticket sales, speakers, sponsors, and registration links are **not yet confirmed** and are not invented on the page.
-- Search indexing is intentionally disabled while the site is a draft.
-- No external social links are shown until official ownership is confirmed.
-- This is a first implementation, not a verified production deployment. Run build and browser QA before publishing.
+## Assets and content
 
-## Design lock
-Do not regenerate the logo or substitute another image. Adjust layout, sizing and spacing around the approved master instead.
+- Never edit or regenerate `brand/logos/builder-fest-2027-logo.png`. `predev` and `prebuild` verify Git blob SHA `13207b122d312f7982e5ff843b49a87e14c00993` and copy the master byte-for-byte.
+- The approved master differs from the logo in the reference. Its proportions and complete artwork are preserved; fidelity work applies to the surrounding layout.
+- `app/reference-art.tsx` frames decorative regions of the intact supplied composite with SVG viewBoxes: waterfront, stage, gathering, and Osaka Castle. No reference logo, speaker portraits, or unconfirmed dates are displayed. The composite is copied byte-for-byte by the sync script, without raster editing or generation.
+- These small reference regions are interim concept visuals, not photographs of this event. Stage images are captioned accordingly. High-resolution source assets would improve sharpness.
+- Dates, venue, speakers, ticket sales, and sponsors remain unconfirmed. No invented names, schedules, purchase flow, or language switcher.
+- Search indexing remains disabled for this draft.
 
-## Visual reference alignment — iteration 2
+CI must retain the parent `brand/` and `references/` folders. Use `website` as the project root; do not deploy it in isolation.
 
-The hero now layers independent `public/decor/osaka-skyline.svg` and `public/decor/sakura-petals.svg` underneath the unchanged approved master `/brand/logo.png`. These are lightweight vector decorations, **not** reproductions of Osaka Castle or the exact original illustration. The official master remains the only source of the event logo.
-
-Next QA: run `npm run build`, check desktop 1440px and mobile 390px, verify that no logo text is clipped, and compare against the user-provided three-panel reference screenshot. The current SVG decorations are first-pass approximations; browser QA and visual approval are outstanding.
-
-## Reference implementation checkpoint (2026-10-28)
-
-The user-provided composite screenshot of desktop/tablet/mobile is the **visual target**, not a source for fictitious event facts. The layout has been adjusted to a full-width, centrally presented approved logo, followed by tagline, date/location metadata, skyline, ink-edge stats band, speaker placeholders, program, and venue.
-
-Reference discrepancies still requiring actual screenshot QA: reference has bespoke Osaka Castle, waterfront photography/illustration, a full stage photograph, and speaker portraits. These cannot be substituted with fabricated real-world photographs or fake speaker identities. Current placeholder illustrations are explicitly temporary. Do not claim pixel-perfect fidelity until assets are licensed/approved and desktop/mobile browser captures have been compared.
-
-Do not overwrite `brand/logos/builder-fest-2027-logo.png`. The master is copied byte-for-byte by `scripts/sync-brand.mjs` and checked against its approved Git blob SHA.
+See `QA.md` for the completed comparison and remaining fidelity limits.
