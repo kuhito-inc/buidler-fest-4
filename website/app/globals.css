@@ -12,3 +12,46 @@
 .hero-ornament{display:none}
 @media(max-width:720px){.hero{padding-bottom:90px}.hero::after{height:150px;opacity:.5}.hero::before{background-size:auto 460px}.hero-grid{padding-bottom:75px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Design iteration 3 — reference-driven composition; official logo never modified */
+:root{--accent-blue:#0c386b;--line:#e5eaf1}
+.header{border-bottom:1px solid #e8ecf1;position:relative;z-index:5;background:#fff}
+.header nav a{transition:color .2s}.header nav a:hover{color:var(--red)}
+.hero{background:linear-gradient(170deg,#fff 0%,#fff 54%,#f1f5f9 100%)}
+.hero::after{opacity:.49;height:225px;mask-image:linear-gradient(to bottom,transparent,#000 35%)}
+.hero::before{opacity:.5}
+.hero-grid{grid-template-columns:57% 43%;gap:0}
+.hero-logo img{max-height:470px;object-position:center}
+.hero-copy{padding-left:20px;position:relative}
+.hero-tagline{font-size:clamp(16px,2vw,25px);line-height:1.4;letter-spacing:3.4px;color:#071e3c}
+.hero-jp{font-size:15px;font-weight:700;letter-spacing:1.7px}
+.event-meta{padding-left:16px;border-left:3px solid var(--red);gap:14px}
+.hero-stamp{position:absolute;right:3%;bottom:23px;z-index:2;display:flex;align-items:center;flex-direction:column;transform:rotate(-8deg);opacity:.36}
+.hero-stamp span{font-family:'Noto Sans JP',sans-serif;font-size:42px;font-weight:800;letter-spacing:-5px;color:var(--red)}
+.hero-stamp small{font-size:9px;font-weight:800;letter-spacing:4px}
+.statbar{background:linear-gradient(90deg,#071b38,#0c3262);border-top:3px solid #bd1830}
+.stats strong{font-size:clamp(13px,1.6vw,20px)}
+.about-visual{height:370px;border:1px solid #e6ebf0;background:radial-gradient(circle at 65% 35%,#fce7e5 0%,#f4f7fb 47%,#e5edf5 100%);isolation:isolate}
+.about-visual-halo{position:absolute;top:-85px;right:-25px;width:340px;height:340px;border-radius:50%;background:#d82b3c;opacity:.13}
+.about-visual-graphic{position:absolute;inset:20px 18px 44px;display:flex;align-items:center;justify-content:center}
+.about-visual-graphic img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 8px 12px #112e4722)}
+.visual-caption{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-between;gap:8px;background:#0b2b51;color:white;padding:13px 18px;font-size:10px;font-weight:800;letter-spacing:1.2px}
+.visual-caption span{color:#b7c9dc}
+.featureband{background:linear-gradient(90deg,#0b254a,#0b3666)}
+.feature-icon{font-size:30px;color:#fff}
+.speaker-placeholder{background:white;box-shadow:0 10px 28px #0924420b;transition:transform .2s}
+.speaker-placeholder:hover{transform:translateY(-3px)}
+.silhouette{position:relative;background:linear-gradient(145deg,#e9eff6,#c6d6e5);overflow:hidden}
+.silhouette::before{content:'';position:absolute;width:150px;height:150px;border:1px solid #ffffff8a;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}
+.speaker-number{position:absolute;top:12px;left:14px;font:700 13px 'DM Sans';color:#52708f}
+.speaker-glyph{color:#8fa7be;font-size:62px}
+.speaker-placeholder strong{letter-spacing:1px}
+.program-grid>div{border-top:3px solid #d52d42;box-shadow:0 12px 30px #132e4b08}
+.program-grid h3{color:#0b2e58}
+.venue-visual{background:linear-gradient(150deg,#e8f1fa,#a9c4db);isolation:isolate}
+.venue-grid{position:absolute;inset:0;background-image:linear-gradient(#fff5 1px,transparent 1px),linear-gradient(90deg,#fff5 1px,transparent 1px);background-size:35px 35px;opacity:.35}
+.venue-visual::before{background:#d52c42;box-shadow:0 0 0 20px #d52c4218}
+.venue-visual span{text-shadow:3px 4px 0 #fff8}
+.closing{background:linear-gradient(125deg,#06162e,#0d3a6d)}
+@media(max-width:1050px){.hero-grid{grid-template-columns:55% 45%}.hero-copy{padding-left:5px}}
+@media(max-width:720px){.hero-grid{display:flex;flex-direction:column}.hero-logo img{max-height:320px}.hero-copy{padding:12px 0 30px}.hero-stamp{right:15px;bottom:12px;opacity:.18}.about-visual{height:280px}.visual-caption{font-size:8px;letter-spacing:.4px}.speaker-number{font-size:11px}.speaker-glyph{font-size:48px}}
