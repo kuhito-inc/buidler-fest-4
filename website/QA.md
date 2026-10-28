@@ -1,4 +1,15 @@
-﻿# Visual QA — 2026-10-28
+# Approved artwork replacement — 2026-10-28
+
+This update supersedes the original master references in the earlier report below.
+
+- Official master: `main-logo.png`; header: `title-logo.png`; hero: `top-hero-image.png`.
+- Source PNGs are copied byte-for-byte with individual hash guards. The previous master remains archived.
+- Removed the old hero waterfront/petal layers, since the new hero includes them. Header and hero preserve their complete native aspect ratios at both viewport widths.
+- Playwright passed at 1440×900 and 390×844: no horizontal overflow, broken images, missing anchors, or page errors; mobile navigation works.
+- Screenshots inspected: `qa-output/brand-update/desktop-viewport.png` and `mobile-viewport.png` (full-page captures also retained).
+
+---
+# Visual QA — 2026-10-28
 
 ## Target and constraints
 

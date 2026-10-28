@@ -1,5 +1,8 @@
 node_modules/
 .next/
 public/brand/logo.png
+public/brand/main-logo.png
+public/brand/title-logo.png
+public/brand/top-hero-image.png
 public/decor/reference-composite.png
 qa-output/

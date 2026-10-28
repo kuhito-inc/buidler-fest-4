@@ -1,4 +1,4 @@
-﻿import { ReferenceArt } from './reference-art';
+import { ReferenceArt } from './reference-art';
 
 const links = [['Home','top'],['About','about'],['Speakers','speakers'],['Program','program'],['Venue','venue'],['Tickets','tickets'],['Sponsors','sponsors'],['News','news']];
 const pillars = [{icon:'code',title:'TECHNICAL TALKS',jp:'技術セッション'},{icon:'people',title:'COMMUNITY',jp:'グローバルな交流'},{icon:'idea',title:'REAL IMPACT',jp:'社会を動かすアイデア'}];
@@ -18,14 +18,14 @@ function Icon({name}:{name:string}) {
 }
 export default function Home(){return <main id="top">
   <header className="site-header"><div className="wrap header-inner">
-    <a className="header-logo" href="#top" aria-label="Buidler Fest 2027 home"><img src="/brand/logo.png" width="1536" height="1024" alt="Buidler Fest 2027 Osaka Japan"/></a>
+    <a className="header-logo" href="#top" aria-label="Buidler Fest 2027 home"><img src="/brand/title-logo.png" width="2172" height="724" alt="Buidler Fest #4 Osaka Japan"/></a>
     <nav className="desktop-nav" aria-label="Main navigation">{links.map(([label,id])=><a href={'#'+id} key={id}>{label}</a>)}</nav>
     <a href="#tickets" className="pill-button header-ticket">Tickets <span aria-hidden="true">→</span></a>
     <details className="mobile-menu"><summary aria-label="Open navigation menu"><span/><span/><span/></summary><nav aria-label="Mobile navigation">{links.map(([label,id])=><a href={'#'+id} key={id}>{label}</a>)}</nav></details>
   </div></header>
   <section className="hero" aria-labelledby="hero-title">
-    <div className="hero-petals" aria-hidden="true"/><div className="hero-skyline"><ReferenceArt region="waterfront"/></div>
-    <div className="wrap hero-body"><div className="hero-logo-panel"><img src="/brand/logo.png" width="1536" height="1024" alt="Buidler Fest 2027 — Osaka, Japan" fetchPriority="high"/></div>
+
+    <div className="wrap hero-body"><div className="hero-logo-panel"><img src="/brand/top-hero-image.png" width="1774" height="887" alt="Buidler Fest #4 — Osaka, Japan" fetchPriority="high"/></div>
       <div className="hero-copy"><h1 id="hero-title">BUILDING A FAIRER TOMORROW</h1><p className="hero-japanese">つくる、つながる、未来を動かす</p>
         <div className="hero-meta"><span><Icon name="calendar"/> DATE TO BE ANNOUNCED</span><span><Icon name="pin"/> OSAKA, JAPAN</span></div>
         <a className="pill-button hero-cta" href="#tickets">Ticket information <span aria-hidden="true">→</span></a>
