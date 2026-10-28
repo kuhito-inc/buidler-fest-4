@@ -35,3 +35,11 @@ Do not regenerate the logo or substitute another image. Adjust layout, sizing an
 The hero now layers independent `public/decor/osaka-skyline.svg` and `public/decor/sakura-petals.svg` underneath the unchanged approved master `/brand/logo.png`. These are lightweight vector decorations, **not** reproductions of Osaka Castle or the exact original illustration. The official master remains the only source of the event logo.
 
 Next QA: run `npm run build`, check desktop 1440px and mobile 390px, verify that no logo text is clipped, and compare against the user-provided three-panel reference screenshot. The current SVG decorations are first-pass approximations; browser QA and visual approval are outstanding.
+
+## Reference implementation checkpoint (2026-10-28)
+
+The user-provided composite screenshot of desktop/tablet/mobile is the **visual target**, not a source for fictitious event facts. The layout has been adjusted to a full-width, centrally presented approved logo, followed by tagline, date/location metadata, skyline, ink-edge stats band, speaker placeholders, program, and venue.
+
+Reference discrepancies still requiring actual screenshot QA: reference has bespoke Osaka Castle, waterfront photography/illustration, a full stage photograph, and speaker portraits. These cannot be substituted with fabricated real-world photographs or fake speaker identities. Current placeholder illustrations are explicitly temporary. Do not claim pixel-perfect fidelity until assets are licensed/approved and desktop/mobile browser captures have been compared.
+
+Do not overwrite `brand/logos/builder-fest-2027-logo.png`. The master is copied byte-for-byte by `scripts/sync-brand.mjs` and checked against its approved Git blob SHA.
