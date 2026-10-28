@@ -25,7 +25,7 @@ export default function Home(){return <main id="top">
   </div></header>
   <section className="hero" aria-labelledby="hero-title">
 
-    <div className="wrap hero-body"><div className="hero-logo-panel"><img src="/brand/top-hero-image.png" width="1774" height="887" alt="Buidler Fest #4 — Osaka, Japan" fetchPriority="high"/></div>
+    <div className="wrap hero-body"><div className="hero-logo-panel"><img src="/brand/main-logo.png" width="1774" height="887" alt="Buidler Fest #4 — Osaka, Japan" fetchPriority="high"/></div>
       <div className="hero-copy"><h1 id="hero-title">BUILDING A FAIRER TOMORROW</h1><p className="hero-japanese">つくる、つながる、未来を動かす</p>
         <div className="hero-meta"><span><Icon name="calendar"/> DATE TO BE ANNOUNCED</span><span><Icon name="pin"/> OSAKA, JAPAN</span></div>
         <a className="pill-button hero-cta" href="#tickets">Ticket information <span aria-hidden="true">→</span></a>

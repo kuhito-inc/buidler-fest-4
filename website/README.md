@@ -22,8 +22,8 @@ The Playwright script expects a server at `http://127.0.0.1:3000` and installed 
 
 ## Assets and content
 
-- The user approved replacement assets on 2026-10-28: `main-logo.png` (official master), `title-logo.png` (header), and `top-hero-image.png` (hero), all in `brand/logos/`. `predev` and `prebuild` verify their individual Git blob hashes and copy them byte-for-byte. `/brand/logo.png` remains an alias of the new master. The old master is retained as a historical asset.
-- Display the supplied header and hero artwork in full, preserving their aspect ratios. The hero already contains the waterfront and petals, so no duplicate decoration is layered behind it.
+- The user approved replacement assets on 2026-10-28: `main-logo.png` (official master and, from 2026-10-29, homepage hero), `title-logo.png` (header), and `top-hero-image.png` (retained alternative artwork), all in `brand/logos/`. `predev` and `prebuild` verify their individual Git blob hashes and copy them byte-for-byte. `/brand/logo.png` remains an alias of the new master. The old master is retained as a historical asset.
+- Display the supplied header and hero artwork in full, preserving their aspect ratios. The hero displays the transparent main logo without additional waterfront layers.
 - `app/reference-art.tsx` frames decorative regions of the intact supplied composite with SVG viewBoxes: stage, gathering, and Osaka Castle. No reference logo, speaker portraits, or unconfirmed dates are displayed. The composite is copied byte-for-byte by the sync script, without raster editing or generation.
 - These small reference regions are interim concept visuals, not photographs of this event. Stage images are captioned accordingly. High-resolution source assets would improve sharpness.
 - Dates, venue, speakers, ticket sales, and sponsors remain unconfirmed. No invented names, schedules, purchase flow, or language switcher.

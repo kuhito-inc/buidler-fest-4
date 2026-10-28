@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap');
 
 :root { --navy:#061f42; --red:#d20c22; --muted:#405675; --paper:#fcfbfa; }
 * { box-sizing:border-box; }
@@ -195,7 +195,7 @@ footer { padding:40px 0; background:#06182f; color:#d0d9e5; }
 }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 
-/* User-approved replacement artwork includes its own waterfront and petals. */
+/* Display the approved header and main logo at their native aspect ratios. */
 .header-logo { width:190px; }
 .header-logo img { height:auto; }
 .hero { padding-bottom:55px; }

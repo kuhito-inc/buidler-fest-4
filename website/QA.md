@@ -1,3 +1,8 @@
+# Main logo hero — 2026-10-29
+
+Hero now uses `/brand/main-logo.png` at its native 1774×887 aspect ratio. Header continues to use `title-logo.png`. PC (1440px) and mobile (390px) screenshots were inspected; Playwright checks passed. Captures: `qa-output/main-logo-hero/`. This supersedes the hero asset choice below.
+
+---
 # Approved artwork replacement — 2026-10-28
 
 This update supersedes the original master references in the earlier report below.
