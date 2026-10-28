@@ -1,0 +1,37 @@
+name: Website build and visual QA
+on:
+  push:
+    paths:
+      - 'website/**'
+      - 'brand/logos/builder-fest-2027-logo.png'
+      - '.github/workflows/website-qa.yml'
+  workflow_dispatch:
+jobs:
+  build-and-screenshot:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: website
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Build production website
+        run: npm run build
+      - name: Install Playwright Chromium
+        run: npx playwright install chromium --with-deps
+      - name: Start server and capture screenshots
+        run: |
+          npm run start > /tmp/buidler-next.log 2>&1 &
+          for i in $(seq 1 40); do curl -fsS http://127.0.0.1:3000/ >/dev/null && break || sleep 2; done
+          node scripts/visual-qa.mjs
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: buidler-website-screenshots
+          path: website/qa-output/
+          if-no-files-found: warn
