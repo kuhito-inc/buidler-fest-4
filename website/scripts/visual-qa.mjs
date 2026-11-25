@@ -11,7 +11,11 @@ for(const [name,width,height] of [['desktop',1440,900],['mobile',390,844]]){
   const errors=[];
   page.on('pageerror',error=>errors.push(error.message));
   await page.goto('http://127.0.0.1:3000/',{waitUntil:'networkidle'});
-  await page.locator('.hero-logo-panel img').evaluate(async img=>{await img.decode()});
+  await page.evaluate(async()=>{
+    const images = Array.from(document.images);
+    for (const image of images) image.loading = 'eager';
+    await Promise.allSettled(images.map(image=>image.decode()));
+  });
   await page.evaluate(()=>document.fonts.ready);
   const info=await page.evaluate(()=>({title:document.title,scrollWidth:document.documentElement.scrollWidth,innerWidth:window.innerWidth,logoLoaded:document.querySelector('.hero-logo-panel img')?.naturalWidth>0,logoSrc:document.querySelector('.hero-logo-panel img')?.getAttribute('src'),brokenImages:[...document.images].filter(img=>!img.complete||!img.naturalWidth).map(img=>img.src),missingAnchors:[...document.querySelectorAll('a[href^="#"]')].filter(a=>!document.getElementById(a.hash.slice(1))).map(a=>a.hash)}));
   console.log(name,JSON.stringify(info));
@@ -25,7 +29,8 @@ for(const [name,width,height] of [['desktop',1440,900],['mobile',390,844]]){
     await page.locator('.mobile-menu summary').click();
     await page.getByRole('navigation',{name:'Mobile navigation'}).waitFor({state:'visible'});
     await page.getByRole('navigation',{name:'Mobile navigation'}).getByRole('link',{name:'Program',exact:true}).click();
-    if(new URL(page.url()).hash!=='#program')throw new Error('Mobile navigation failed');
+    await page.waitForURL('**/program');
+    await page.getByRole('heading',{level:1,name:'Program',exact:true}).waitFor();
   }
   results.push({name,...info});
   await page.close();

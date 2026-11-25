@@ -4,9 +4,12 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 const assets = [
-  ["main-logo.png", "21f995434caec202f21aea1d6a94dd17774f7228"],
+  ["title-logo-mini.png", "068cc7dd5b01ff1c44fcbd67003ef126dbfdf360"],
+  ["hero-big-logo.png", "885f59fa2cd52a03601f22db3da4a341af6e0272"],
+  ["title-logo2.png", "14ea80b1a4a63808ce69df6a8e3a30d425db4d0c"],
   ["title-logo.png", "575c9f759c50667d884a5824cad170ea4004c992"],
-  ["top-hero-image.png", "af85a5c28ba9d3784ceb030a3fb0fe0990af2ddc"],
+  ["second-hero-osaka-casle.png", "dd0047eee6f731cd365fa8ba325435c4661c790e"],
+  ["osaka-night.png", "0569e252f2b0439a6d1fb799f1be7843f4d2aa70"],
 ];
 for (const [name, expectedGitBlobSha] of assets) {
   const source = resolve(root, "brand/logos", name);
@@ -18,7 +21,7 @@ for (const [name, expectedGitBlobSha] of assets) {
   mkdirSync(dirname(target), { recursive: true });
   writeFileSync(target, bytes);
   // Preserve the existing public master URL for downstream consumers.
-  if (name === "main-logo.png") writeFileSync(resolve(dirname(target), "logo.png"), bytes);
+  if (name === "hero-big-logo.png") writeFileSync(resolve(dirname(target), "logo.png"), bytes);
   console.log("Approved asset copied byte-for-byte:", name, hash);
 }
 // Display only decorative windows of the supplied design in CSS/SVG. The source

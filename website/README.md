@@ -22,11 +22,11 @@ The Playwright script expects a server at `http://127.0.0.1:3000` and installed 
 
 ## Assets and content
 
-- The user approved replacement assets on 2026-10-28: `main-logo.png` (official master and, from 2026-10-29, homepage hero), `title-logo.png` (header), and `top-hero-image.png` (retained alternative artwork), all in `brand/logos/`. `predev` and `prebuild` verify their individual Git blob hashes and copy them byte-for-byte. `/brand/logo.png` remains an alias of the new master. The old master is retained as a historical asset.
+- Asset placement updated on 2026-10-29: `title-logo.png` (header), `hero-big-logo.png` (hero), `osaka-night.png` (venue), and `second-hero-osaka-casle.png` (ticket accent), all in `brand/logos/`. `predev` and `prebuild` verify their Git blob hashes and copy them byte-for-byte. `/brand/logo.png` aliases the hero artwork.
 - Display the supplied header and hero artwork in full, preserving their aspect ratios. The hero displays the transparent main logo without additional waterfront layers.
 - `app/reference-art.tsx` frames decorative regions of the intact supplied composite with SVG viewBoxes: stage, gathering, and Osaka Castle. No reference logo, speaker portraits, or unconfirmed dates are displayed. The composite is copied byte-for-byte by the sync script, without raster editing or generation.
 - These small reference regions are interim concept visuals, not photographs of this event. Stage images are captioned accordingly. High-resolution source assets would improve sharpness.
-- Dates, venue, speakers, ticket sales, and sponsors remain unconfirmed. No invented names, schedules, purchase flow, or language switcher.
+- The event is on April 24–25, 2027 at Hotel Fukuracia Osaka Bay. Blind tickets are 900 ADA and Normal tickets are 1,000 ADA. Ticket sales details and accommodation dates will be announced later.
 - Search indexing remains disabled for this draft.
 
 CI must retain the parent `brand/` and `references/` folders. Use `website` as the project root; do not deploy it in isolation.
